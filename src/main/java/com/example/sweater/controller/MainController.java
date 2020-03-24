@@ -35,7 +35,7 @@ public class MainController {
     @GetMapping("/main")
     public String main(@RequestParam(required = false, defaultValue = "") String filter, Model model) {
         Iterable<Message> messages = messageRepo.findAll();
-
+        System.out.println(new int[][]{{1,2,7},{3,4,5}}[1][2]);
         if (filter != null && !filter.isEmpty()) {
             messages = messageRepo.findByTag(filter);
         } else {
